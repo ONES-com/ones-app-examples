@@ -53,6 +53,7 @@ export class AppController {
       if (!manifest.id) {
         throw new Error('Missing required field: id');
       }
+      manifest.id = process.env.APP_ID;
       manifest.base_url = process.env.BASE_URL;
 
       res.setHeader('Content-Type', 'application/json');
