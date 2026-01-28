@@ -1,0 +1,42 @@
+{
+    "id": "${APP_ID}",
+    "name": "Auto Watcher",
+    "desc": "Automatically assign predefined watchers to issues based on configurable rules, so the right people are always notified at the right time.",
+    "version": "v0.0.1",
+    "base_url": "${BASE_URL}",
+    "auth": {
+      "type": "jwt"
+    },
+    "lifecycle_callback": {
+      "install": "/install_cb",
+      "enabled": "/enabled_cb"
+    },
+    "oauth": {
+        "type": ["app", "user"],
+        "scope": [
+            "read:account:teams",
+            "read:account:user",
+            "read:project:issue",
+            "read:project:project",
+            "write:project:issue-watcher"
+        ]
+    },
+    "events": {
+      "url": "/event_cb",
+      "types": [
+        {
+          "eventType": "ones:project:issue:created"
+        }
+      ]
+    },
+    "extensions": {
+        "appSettingPages": [
+            {
+                "key":"settingPage",
+                "funcs": {
+                    "customEntries": "/settingPage/entries"
+                }
+            }
+        ]
+    }
+  }

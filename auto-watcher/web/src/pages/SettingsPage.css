@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+body {
+  margin: 0;
+  background: #f4f1ea;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  padding: 3.5rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 10%, #ffe6b7 0%, transparent 60%),
+    radial-gradient(circle at 80% 0%, #a9d8ff 0%, transparent 50%),
+    linear-gradient(160deg, #f4f1ea 0%, #f8f6f1 100%);
+  z-index: 0;
+}
+
+.background::after {
+  content: '';
+  position: absolute;
+  inset: -20% -10% auto auto;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 120deg,
+    rgba(255, 201, 107, 0.45),
+    rgba(158, 204, 255, 0.55),
+    rgba(255, 201, 107, 0.45)
+  );
+  filter: blur(0.5px);
+  animation: float 12s ease-in-out infinite;
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  animation: fadeUp 0.6s ease-out;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8b5c12;
+  margin: 0 0 0.5rem 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+}
+
+.subtitle {
+  max-width: 520px;
+  margin: 0.75rem 0 0 0;
+  font-size: 1.05rem;
+  color: #4a4237;
+  line-height: 1.6;
+}
+
+.chip {
+  background: #101010;
+  color: #f8f1e5;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #f5c046;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(245, 192, 70, 0.3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+  gap: 2rem;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(31, 24, 15, 0.12);
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.8s ease-out;
+}
+
+.panel.secondary {
+  background: rgba(21, 18, 12, 0.92);
+  color: #f9f5ed;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #d9d2c6;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fffdfa;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #7a6d5d;
+  margin: 0.25rem 0 0 0;
+}
+
+.results {
+  border: 1px solid #e4dccf;
+  border-radius: 16px;
+  padding: 0.5rem;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  background: #fffdfa;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+}
+
+.result-item strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.result-item span {
+  font-size: 0.8rem;
+  color: #6b5d4a;
+}
+
+.result-item + .result-item {
+  border-top: 1px solid #efe6d7;
+}
+
+.selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #101010;
+  color: #f8f1e5;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tag span {
+  opacity: 0.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primary {
+  background: #101010;
+  color: #f8f1e5;
+  box-shadow: 0 12px 20px rgba(16, 16, 16, 0.2);
+}
+
+.primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 24px rgba(16, 16, 16, 0.25);
+}
+
+.ghost {
+  background: #efe6d6;
+  color: #3d3425;
+}
+
+.status {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.status.info {
+  background: #f0ede7;
+  color: #3f3525;
+}
+
+.status.success {
+  background: #e6f4dd;
+  color: #245224;
+}
+
+.status.error {
+  background: #fde6df;
+  color: #7b2c1f;
+}
+
+.panel.secondary h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.preview {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.preview span {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #f5c46a;
+}
+
+.preview p {
+  margin: 0.35rem 0 0 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: #f6efe5;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.card h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+}
+
+.card ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #efe6d7;
+  line-height: 1.6;
+}
+
+.card.accent {
+  background: #f5c46a;
+  color: #1b1307;
+}
+
+.card.accent p {
+  margin: 0;
+  color: inherit;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-20px, 20px, 0);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel.secondary {
+    order: -1;
+  }
+}
