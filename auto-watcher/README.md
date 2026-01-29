@@ -79,6 +79,8 @@ See: [Expose Your App Service →](../EXPOSE_YOUR_APP.md)
 Edit the `.env` file with your app settings:
 
 ```bash
+# App ID is generated automatically by the script `npm run init`
+APP_ID=app_<random>
 # App Base URL Configuration
 # Replace <random> with the URL printed by cloudflared
 BASE_URL=https://<random>.trycloudflare.com
