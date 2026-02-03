@@ -99,7 +99,7 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ## 🔗 Related Links
 
-- [ONES Developer Documentation](https://docs.ones.com/developer)
+- [ONES Developer Documentation](https://docs.ones.com/developer/guide/getting-started/)
 - [ONES OpenPlatform Capabilities Reference](https://docs.ones.com/developer/abilities/reference)
 - [ONES App Manifest Documentation](https://docs.ones.com/developer/app-manifest)
 

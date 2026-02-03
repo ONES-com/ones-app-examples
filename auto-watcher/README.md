@@ -278,7 +278,7 @@ For more detailed development guidelines, see [ARCHITECTURE.md](./ARCHITECTURE.m
 
 ## 🔗 Related Links
 
-- [ONES Developer Documentation](https://docs.ones.com/developer)
+- [ONES Developer Documentation](https://docs.ones.com/developer/guide/getting-started/)
 - [ONES OpenPlatform Capabilities Reference](https://docs.ones.com/developer/abilities/reference)
 - [NestJS Official Documentation](https://docs.nestjs.com/)
 - [React Official Documentation](https://react.dev/)
